@@ -8,11 +8,34 @@
     },
     "tasks": [
         {
-            "label": "compile for C++",
+            "label": "Simple compile for C++",
+            "command": "g++",
+            "args": [
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "group": "build",
+            "problemMatcher": {
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
+            "label": "Cmake compile for C++",
             "command": "cd ${fileDirname} && cmake . -G \"MinGW Makefiles\" && mingw32-make",
             "group": {
                 "kind": "build",
-                "isDefault": true
             },
             "problemMatcher": {
                 "fileLocation": [
@@ -30,12 +53,21 @@
             }
         },
         {
-            "label": "execute",
+            "label": "CMake execute",
             "command": "cmd",
             "group": "test",
             "args": [
                 "/C",
                 "${fileDirname}\\${fileDirnameBasename}"
+            ]
+        },
+        {
+            "label": "Simple execute",
+            "command": "cmd",
+            "group": "test",
+            "args": [
+                "/C",
+                "${fileDirname}\\${fileBasenameNoExtension}"
             ]
         },
         {
