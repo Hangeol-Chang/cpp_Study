@@ -2,6 +2,8 @@
     "files.associations": {
         "ios": "cpp",
         "fstream": "cpp",
-        "iostream": "cpp"
-    }
+        "iostream": "cpp",
+        "xlocale": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
