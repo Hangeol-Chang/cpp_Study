@@ -1,3 +1,15 @@
+// 빼기 헤더
+#ifndef SUBTRACTER_H
+#define SUBTRACTER_H
+class Subtracter
+{
+private :
+    int op1, op2;
+public :
+    Subtracter(int a, int b);
+    int Process();
+};
+#endif
 
 // 더하기 헤더
 #ifndef ADDER_H
@@ -12,15 +24,3 @@ public :
 };
 #endif
 
-// 빼기 헤더
-#ifndef SUBTRACTER_H
-#define SUBTRACTER_H
-class SubTracter
-{
-private :
-    int op1, op2;
-public :
-    SubTracter(int a, int b);
-    int Process();
-};
-#endif
