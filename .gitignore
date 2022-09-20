@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+CMakeFiles/
+Makefile
+CMakeCache.txt
+CMakeLists.txt
+
+# 복사용 CMakeLists 남기기
+!/CMakeLists.txt
