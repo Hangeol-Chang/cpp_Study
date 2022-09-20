@@ -1,3 +1,9 @@
+## 전처리기 (preprocessor)
+> 프로그램을 컴파일하기 직전에 실행되는 별도의 프로그램. 
+> 전처리기는 #으로 시작하는 지시자(directives)를 찾아서 처리한다.
+
+#include를 풀어주거나, #def를 처리하는 등을 함.
+
 ## 지시문
 - 소스 프로그램을 쉽게 변경하고, 다른 실행 환경에서 컴파일하기 쉽게 만드는 데에 사용
 - 컴파일러에게 특정 작업을 수행하도록 지시함.
@@ -122,3 +128,52 @@ int main() {
 ```
 - 위처럼 사용할 시 part1.h에서는 TIME = 800, part2.h에서는 TIME = 1000이 된다.
 - undef 없이 define만 두 번 써서 정의해도 사용 가능. 하지만 경고를 보게 됨.
+
+### ifdef, if, endif, ifndef, elif, else
+```cpp
+#ifdef 매크로명
+{
+    
+}
+#endif
+```
+#### ifdef
+- 만약 '매크로명'이 정의되어 있으면 블록을 실행.
+#### if, elif
+- 매크로명 안의 값이 TRUE인지 판단.(조건문 쓸 수 있음)
+> c++, c의 구동 환경 간 차이에서 오는 에러를 처리하기 위해 주로 사용되며,
+> 일반적으로 빌드 환경이 고정적일 때는 잘 사용되지 않는다.
+```cpp
+#if NUM == 1
+    cout << 1 << endl;
+#elif NUM == 2
+    cout << 2 << endl;
+#endif
+```
+#### ifndef
+- 만약 '매크로명'이 정의되어 있지 않으면 블록을 실행.
+
+### using
+- dll 등의 외부 파일을 가져오기 위한 지시문
+
+### line
+- #line으로 하여 라인과 파일명을 지정할 수 있음
+(이걸 어따쓰나여?)
+```cpp
+#include <iostream>
+
+using namespace std;
+int main() {
+    cout << __LINE__ << __FILE__<< endl;    //5 line.cpp
+    cout << __LINE__ << __FILE__<< endl;    //6 line.cpp
+#line 11 "line2.cpp"
+    cout << __LINE__ << __FILE__<< endl;    //11 line2.cpp
+    cout << __LINE__ << __FILE__<< endl;    //12 line2.cpp
+#line 1
+    cout << __LINE__ << __FILE__<< endl;    //1 line2.cpp
+}
+```
+
+#### #error
+- #if와 일반적으로 같이 쓰임. 
+- 특정 상황을 불만족할 때 에러를 발생시키는 역할. 
