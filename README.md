@@ -20,3 +20,14 @@
 ##### 컴파일러
 - gcc로 빌드할 경우, 헤더파일을 제대로 링크해주지 못하여 reference에러가 발생.
 - 이를 해결하기 위해 CMake 빌드 환경 구축.
+
+
+##### 참고한 사이트들
+
+- 많이 참고한 곳들
+[소년코딩 티스토리](https://boycoding.tistory.com)
+[TCPSchool](http://www.tcpschool.com/c/c_prepro_macroFunc)
+[WikiDocs](https://wikidocs.net/46945)
+
+- 한번씩 거쳐간 곳들
+https://zepeh.tistory.com/335
