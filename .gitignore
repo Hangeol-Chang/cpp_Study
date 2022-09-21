@@ -35,6 +35,7 @@ CMakeFiles/
 Makefile
 CMakeCache.txt
 CMakeLists.txt
+*.cmake
 
 # 복사용 CMakeLists 남기기
 !/CMakeLists.txt
