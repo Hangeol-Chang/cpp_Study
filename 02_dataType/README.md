@@ -101,3 +101,48 @@ auto n = 10;    // int
 decltpye(n) d = 3;  // int
 ```
 
+### typedef, using
+- 실제 변수 타입 대신 별칭을 사용
+- 이미 정의된 자료형이나, 사용자 정의 자료형을 짧거나 의미있게 사용 가능.
+```cpp
+//double 타입을 distance_t로 지정
+typedef double distance_t;
+distance_t d = 14.23;
+```
+#### 사용 목적
+- 가독성
+- 플랫폼 독립 코딩
+    - c++은 java와 다르게 short, int, long이 플랫폼에 따라 크기가 다름.(이래서 자바 써야됨)
+    - 이를 플랫폼에 관계없이 맞춰주기 위해 새용가능.
+    ```cpp
+        #ifdef INT_2_BYTES
+        typedef char int8_t
+        typedef int int16_t
+        typedef long int32_t
+        #else
+        typedef char int8_t
+        typedef short int16_t
+        typedef int int32_t
+        #endif
+    ```
+- 복잡한 타입 간단하게 만들기
+```cpp
+// 겁나 불편함.
+std::vector<std::pair<std::string, int>> pairlist;
+
+// 편안
+typeof std::vector<std::pair<std::string, int>> pairlist_t;
+pairlist_t pairlist;
+```
+
+#### using
+- 기능적으로 typedef와 같다.
+아래처럼 사용
+```cpp
+// typedef와 다르게 새로 정의하는 이름이 앞에 온다.
+// 가독성 면에서 typedef보다 using의 사용이 권장된다.
+using distance_t = double;
+```
+
+##### 참고자료
+https://boycoding.tistory.com/182?category=1008283
