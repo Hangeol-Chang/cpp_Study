@@ -9,5 +9,5 @@ int main() {
     int c = add(a, b);
     int d = sub(a, b); 
 
-    cout << c << " " << d << endl;
+    cout << c << " " << d << " " << d << endl;
 }
