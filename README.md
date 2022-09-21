@@ -31,3 +31,4 @@
 
 - 한번씩 거쳐간 곳들
 https://zepeh.tistory.com/335
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=dlcksgod1&logNo=221204397624
